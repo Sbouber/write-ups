@@ -9,13 +9,19 @@ This program converts brainfuck into x86.
 
 In the main function a BrainfuckVM object is allocated, which has the following members:
 
-BrainfuckVM {
- QWORD PTR array
- QWORD PTR jitbuffer_base
- QWORD array_size
- QWORD jitbuffer_idx
- QWORD jitbuffer_size
-}
+> BrainfuckVM {
+
+> QWORD PTR array
+ 
+> QWORD PTR jitbuffer_base
+ 
+> QWORD array_size
+ 
+> QWORD jitbuffer_idx
+ 
+> QWORD jitbuffer_size
+ 
+> }
 
 The key observations to solve this challenge are:
 - The jitbuffer remains writeable, so we can place shellcode in the jitbuffer.
